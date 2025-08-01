@@ -1,15 +1,15 @@
 /** 
-* Generate OTP message with masked mobile number 
-* @param {string} message - The custom message to display 
-* @param {string} mobileNumber - The mobile number to mask 
-* @return {string} Returns a message with the last 4 digits of the mobile number visible 
+* Masks the first 5 digits of the mobile number with * 
+* @param {*} mobileNumber 
+* @returns {string} returns the mobile number with first 5 digits masked 
 */ 
-function otpMessage(message, mobileNumber) { 
-if (!mobileNumber || typeof mobileNumber !== 'string') { 
-return message || 'We\'ve sent a 6-digit OTP to your registered mobile number'; 
+function maskMobileNumber(mobileNumber) { 
+if (!mobileNumber) { 
+return ''; 
 } 
-const lastFourDigits = mobileNumber.slice(-4); 
-return `${message} ******${lastFourDigits}`; 
+const value = mobileNumber.toString(); 
+// Mask first 5 digits and keep the rest 
+return ` ${'*'.repeat(5)}${value.substring(5)}`; 
 } 
 
 /**
