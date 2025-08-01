@@ -57,4 +57,4 @@ function days(endDate, startDate) {
 }
 
 // eslint-disable-next-line import/prefer-default-export
-export { getFullName, days, submitFormArrayToString };
+export { getFullName, days, submitFormArrayToString, maskMobileNumber};
