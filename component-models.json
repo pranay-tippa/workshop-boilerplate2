@@ -221,13 +221,6 @@
         "value": ""
       },
       {
-        "component": "text",
-        "name": "customFunctionsPath",
-        "label": "Custom Functions Path",
-        "valueType": "string",
-        "value": "/blocks/form/functions.js"
-      },
-      {
         "component": "boolean",
         "name": "enableRestEndpointPost",
         "label": "Enable POST request",
@@ -384,8 +377,8 @@
             "required": true,
             "valueFormat": "regexp",
             "validation": {
-              "regExp": "^[^$].*",
-              "customErrorMsg": "Name cannot start with $"
+              "regExp": "^(?!\\$)[A-Za-z0-9_]+$",
+              "customErrorMsg": "Name must only contain letters, numbers, or underscores and cannot start with $"
             }
           },
           {
@@ -468,11 +461,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -689,11 +683,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -915,11 +910,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -1101,11 +1097,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -1364,6 +1361,12 @@
             "valueType": "string"
           },
           {
+            "component": "boolean",
+            "label": "Allow multiple selection",
+            "name": "multiSelect",
+            "valueType": "boolean"
+          },
+          {
             "component": "select",
             "label": "Data type of submitted value",
             "name": "type",
@@ -1381,6 +1384,18 @@
               {
                 "name": "Number",
                 "value": "number"
+              },
+              {
+                "name": "String[]",
+                "value": "string[]"
+              },
+              {
+                "name": "Boolean[]",
+                "value": "boolean[]"
+              },
+              {
+                "name": "Number[]",
+                "value": "number[]"
               }
             ]
           },
@@ -1393,11 +1408,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -1579,11 +1595,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -1807,11 +1824,12 @@
         "valueType": "string"
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -2007,7 +2025,16 @@
             "component": "aem-content",
             "name": "fragmentPath",
             "label": "Fragment reference",
-            "valueType": "string"
+            "valueType": "string",
+            "validation": {
+              "rootPath": "/content/forms/af"
+            }
+          },
+          {
+            "component": "edit-fragment",
+            "name": "editFragment",
+            "label": "Edit Fragment",
+            "valueType": "boolean"
           }
         ]
       },
@@ -2040,11 +2067,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -2304,11 +2332,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -2548,11 +2577,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -2921,11 +2951,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -3141,11 +3172,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -3219,8 +3251,8 @@
             "required": true,
             "valueFormat": "regexp",
             "validation": {
-              "regExp": "^[^$].*",
-              "customErrorMsg": "Name cannot start with $"
+              "regExp": "^(?!\\$)[A-Za-z0-9_]+$",
+              "customErrorMsg": "Name must only contain letters, numbers, or underscores and cannot start with $"
             }
           },
           {
@@ -3303,11 +3335,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -3341,8 +3374,8 @@
             "required": true,
             "valueFormat": "regexp",
             "validation": {
-              "regExp": "^[^$].*",
-              "customErrorMsg": "Name cannot start with $"
+              "regExp": "^(?!\\$)[A-Za-z0-9_]+$",
+              "customErrorMsg": "Name must only contain letters, numbers, or underscores and cannot start with $"
             }
           },
           {
@@ -3425,11 +3458,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -3583,11 +3617,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -3800,21 +3835,25 @@
         "valueType": "boolean"
       },
       {
-        "component": "tab",
-        "label": "Help Content",
-        "name": "help"
-      },
-      {
-        "component": "richtext",
-        "name": "description",
-        "label": "Help text",
-        "valueType": "string"
-      },
-      {
-        "component": "richtext",
-        "name": "tooltip",
-        "label": "Short description",
-        "valueType": "string"
+        "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
+          {
+            "component": "richtext",
+            "name": "description",
+            "label": "Help text",
+            "valueType": "string"
+          },
+          {
+            "component": "richtext",
+            "name": "tooltip",
+            "label": "Short description",
+            "valueType": "string"
+          }
+        ]
       },
       {
         "component": "tab",
@@ -3822,66 +3861,70 @@
         "name": "validation"
       },
       {
-        "component": "boolean",
-        "name": "required",
-        "label": "Required",
-        "valueType": "boolean"
-      },
-      {
-        "component": "text",
-        "name": "mandatoryMessage",
-        "label": "Error message",
-        "valueType": "string",
-        "description": "Error message shown when required field is left empty."
-      },
-      {
-        "component": "text",
-        "name": "validateExpMessage",
-        "label": "Script validation message",
-        "valueType": "string",
-        "description": "Displayed when validation script fails."
-      },
-      {
-        "component": "number",
-        "name": "minLength",
-        "label": "Minimum number of characters",
-        "valueType": "number",
-        "description": "Minimum length of the text in the field"
-      },
-      {
-        "component": "text",
-        "name": "minLengthMessage",
-        "valueType": "string",
-        "label": "Minimum characters error message",
-        "description": "Error message shown when less than minimum characters are entered."
-      },
-      {
-        "component": "number",
-        "name": "maxLength",
-        "label": "Maximum number of characters",
-        "valueType": "number",
-        "description": "Maximum length of the text in the field"
-      },
-      {
-        "component": "text",
-        "name": "maxLengthMessage",
-        "valueType": "string",
-        "label": "Maximum characters error message",
-        "description": "Error message shown when more than maximum characters are entered."
-      },
-      {
-        "component": "text",
-        "name": "pattern",
-        "valueType": "string",
-        "label": "Pattern",
-        "description": "Regular Expression is permitted."
-      },
-      {
-        "component": "text",
-        "name": "validatePictureClauseMessage",
-        "valueType": "string",
-        "label": "Pattern Error message",
-        "description": "Error message shown when the pattern is not matched."
+        "fields": [
+          {
+            "component": "boolean",
+            "name": "required",
+            "label": "Required",
+            "valueType": "boolean"
+          },
+          {
+            "component": "text",
+            "name": "mandatoryMessage",
+            "label": "Error message",
+            "valueType": "string",
+            "description": "Error message shown when required field is left empty."
+          },
+          {
+            "component": "text",
+            "name": "validateExpMessage",
+            "label": "Script validation message",
+            "valueType": "string",
+            "description": "Displayed when validation script fails."
+          },
+          {
+            "component": "number",
+            "name": "minLength",
+            "label": "Minimum number of characters",
+            "valueType": "number",
+            "description": "Minimum length of the text in the field"
+          },
+          {
+            "component": "text",
+            "name": "minLengthMessage",
+            "valueType": "string",
+            "label": "Minimum characters error message",
+            "description": "Error message shown when less than minimum characters are entered."
+          },
+          {
+            "component": "number",
+            "name": "maxLength",
+            "label": "Maximum number of characters",
+            "valueType": "number",
+            "description": "Maximum length of the text in the field"
+          },
+          {
+            "component": "text",
+            "name": "maxLengthMessage",
+            "valueType": "string",
+            "label": "Maximum characters error message",
+            "description": "Error message shown when more than maximum characters are entered."
+          },
+          {
+            "component": "text",
+            "name": "pattern",
+            "valueType": "string",
+            "label": "Pattern",
+            "description": "Regular Expression is permitted."
+          },
+          {
+            "component": "text",
+            "name": "validatePictureClauseMessage",
+            "valueType": "string",
+            "label": "Pattern Error message",
+            "description": "Error message shown when the pattern is not matched."
+          }
+        ]
       }
     ]
   },
@@ -4092,11 +4135,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -4108,254 +4152,6 @@
             "name": "tooltip",
             "label": "Short description",
             "valueType": "string"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "card-choice",
-    "fields": [
-      {
-        "component": "container",
-        "name": "basic",
-        "label": "Basic",
-        "collapsible": false,
-        "fields": [
-          {
-            "component": "text",
-            "name": "name",
-            "label": "Name",
-            "valueType": "string",
-            "required": true,
-            "valueFormat": "regexp",
-            "validation": {
-              "regExp": "^[^$].*",
-              "customErrorMsg": "Name cannot start with $"
-            }
-          },
-          {
-            "component": "text",
-            "name": "jcr:title",
-            "label": "Title",
-            "valueType": "string"
-          },
-          {
-            "component": "boolean",
-            "name": "hideTitle",
-            "label": "Hide title",
-            "valueType": "boolean"
-          },
-          {
-            "component": "datasource-bindref",
-            "name": "dataRef",
-            "label": "Bind reference",
-            "valueType": "string"
-          },
-          {
-            "component": "boolean",
-            "name": "unboundFormElement",
-            "label": "Mark as Unbound Form Element",
-            "valueType": "boolean"
-          },
-          {
-            "component": "boolean",
-            "name": "visible",
-            "label": "Show Component",
-            "valueType": "boolean",
-            "value": true
-          },
-          {
-            "component": "boolean",
-            "name": "enabled",
-            "label": "Enable Component",
-            "valueType": "boolean",
-            "value": true
-          },
-          {
-            "component": "boolean",
-            "name": "readOnly",
-            "label": "Read-only",
-            "valueType": "boolean"
-          },
-          {
-            "component": "select",
-            "name": "colspan",
-            "label": "Column Span",
-            "valueType": "string",
-            "value": "12",
-            "options": [
-              {
-                "name": "1 column",
-                "value": "1"
-              },
-              {
-                "name": "2 column",
-                "value": "2"
-              },
-              {
-                "name": "3 column",
-                "value": "3"
-              },
-              {
-                "name": "4 column",
-                "value": "4"
-              },
-              {
-                "name": "5 column",
-                "value": "5"
-              },
-              {
-                "name": "6 column",
-                "value": "6"
-              },
-              {
-                "name": "7 column",
-                "value": "7"
-              },
-              {
-                "name": "8 column",
-                "value": "8"
-              },
-              {
-                "name": "9 column",
-                "value": "9"
-              },
-              {
-                "name": "10 column",
-                "value": "10"
-              },
-              {
-                "name": "11 column",
-                "value": "11"
-              },
-              {
-                "name": "12 column",
-                "value": "12"
-              }
-            ]
-          },
-          {
-            "component": "text",
-            "name": "enum",
-            "label": "Options (Data Value)",
-            "valueType": "string",
-            "multi": true,
-            "required": true
-          },
-          {
-            "component": "text",
-            "name": "enumNames",
-            "label": "Options (Display Value)",
-            "valueType": "string",
-            "multi": true
-          },
-          {
-            "component": "text",
-            "name": "default",
-            "label": "Default option",
-            "valueType": "string"
-          },
-          {
-            "component": "select",
-            "name": "variant",
-            "label": "Variant",
-            "options": [
-              {
-                "name": "Default",
-                "value": "default"
-              },
-              {
-                "name": "Cards",
-                "value": "cards"
-              }
-            ],
-            "value": "default"
-          },
-          {
-            "component": "select",
-            "label": "Data type of submitted value",
-            "name": "type",
-            "valueType": "string",
-            "options": [
-              {
-                "name": "String",
-                "value": "string"
-              },
-              {
-                "name": "Boolean",
-                "value": "boolean"
-              },
-              {
-                "name": "Number",
-                "value": "number"
-              }
-            ]
-          },
-          {
-            "component": "radio-group",
-            "label": "Display Options",
-            "name": "orientation",
-            "valueType": "string",
-            "value": "horizontal",
-            "options": [
-              {
-                "name": "Horizontally",
-                "value": "horizontal"
-              },
-              {
-                "name": "Vertically",
-                "value": "vertical"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "richtext",
-            "name": "description",
-            "label": "Help text",
-            "valueType": "string"
-          },
-          {
-            "component": "richtext",
-            "name": "tooltip",
-            "label": "Short description",
-            "valueType": "string"
-          }
-        ]
-      },
-      {
-        "component": "container",
-        "name": "validation",
-        "label": "Validation",
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "boolean",
-            "name": "required",
-            "label": "Required",
-            "valueType": "boolean"
-          },
-          {
-            "component": "text",
-            "name": "mandatoryMessage",
-            "label": "Error message",
-            "valueType": "string",
-            "description": "Error message shown when required field is left empty."
-          },
-          {
-            "component": "text",
-            "name": "validateExpMessage",
-            "label": "Script validation message",
-            "valueType": "string",
-            "description": "Displayed when validation script fails."
           }
         ]
       }
@@ -4486,11 +4282,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -4502,254 +4299,6 @@
             "name": "tooltip",
             "label": "Short description",
             "valueType": "string"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "number-rating",
-    "fields": [
-      {
-        "component": "container",
-        "name": "basic",
-        "label": "Basic",
-        "collapsible": false,
-        "fields": [
-          {
-            "component": "text",
-            "name": "name",
-            "label": "Name",
-            "valueType": "string",
-            "required": true,
-            "valueFormat": "regexp",
-            "validation": {
-              "regExp": "^[^$].*",
-              "customErrorMsg": "Name cannot start with $"
-            }
-          },
-          {
-            "component": "text",
-            "name": "jcr:title",
-            "label": "Title",
-            "valueType": "string"
-          },
-          {
-            "component": "boolean",
-            "name": "hideTitle",
-            "label": "Hide title",
-            "valueType": "boolean"
-          },
-          {
-            "component": "datasource-bindref",
-            "name": "dataRef",
-            "label": "Bind reference",
-            "valueType": "string"
-          },
-          {
-            "component": "boolean",
-            "name": "unboundFormElement",
-            "label": "Mark as Unbound Form Element",
-            "valueType": "boolean"
-          },
-          {
-            "component": "boolean",
-            "name": "visible",
-            "label": "Show Component",
-            "valueType": "boolean",
-            "value": true
-          },
-          {
-            "component": "boolean",
-            "name": "enabled",
-            "label": "Enable Component",
-            "valueType": "boolean",
-            "value": true
-          },
-          {
-            "component": "boolean",
-            "name": "readOnly",
-            "label": "Read-only",
-            "valueType": "boolean"
-          },
-          {
-            "component": "select",
-            "name": "colspan",
-            "label": "Column Span",
-            "valueType": "string",
-            "value": "12",
-            "options": [
-              {
-                "name": "1 column",
-                "value": "1"
-              },
-              {
-                "name": "2 column",
-                "value": "2"
-              },
-              {
-                "name": "3 column",
-                "value": "3"
-              },
-              {
-                "name": "4 column",
-                "value": "4"
-              },
-              {
-                "name": "5 column",
-                "value": "5"
-              },
-              {
-                "name": "6 column",
-                "value": "6"
-              },
-              {
-                "name": "7 column",
-                "value": "7"
-              },
-              {
-                "name": "8 column",
-                "value": "8"
-              },
-              {
-                "name": "9 column",
-                "value": "9"
-              },
-              {
-                "name": "10 column",
-                "value": "10"
-              },
-              {
-                "name": "11 column",
-                "value": "11"
-              },
-              {
-                "name": "12 column",
-                "value": "12"
-              }
-            ]
-          },
-          {
-            "component": "text",
-            "name": "enum",
-            "label": "Options (Data Value)",
-            "valueType": "string",
-            "multi": true,
-            "required": true
-          },
-          {
-            "component": "text",
-            "name": "enumNames",
-            "label": "Options (Display Value)",
-            "valueType": "string",
-            "multi": true
-          },
-          {
-            "component": "text",
-            "name": "default",
-            "label": "Default option",
-            "valueType": "string"
-          },
-          {
-            "component": "select",
-            "name": "variant",
-            "label": "Variant",
-            "options": [
-              {
-                "name": "Default",
-                "value": "default"
-              },
-              {
-                "name": "Cards",
-                "value": "cards"
-              }
-            ],
-            "value": "cards"
-          },
-          {
-            "component": "select",
-            "label": "Data type of submitted value",
-            "name": "type",
-            "valueType": "string",
-            "options": [
-              {
-                "name": "String",
-                "value": "string"
-              },
-              {
-                "name": "Boolean",
-                "value": "boolean"
-              },
-              {
-                "name": "Number",
-                "value": "number"
-              }
-            ]
-          },
-          {
-            "component": "radio-group",
-            "label": "Display Options",
-            "name": "orientation",
-            "valueType": "string",
-            "value": "horizontal",
-            "options": [
-              {
-                "name": "Horizontally",
-                "value": "horizontal"
-              },
-              {
-                "name": "Vertically",
-                "value": "vertical"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "richtext",
-            "name": "description",
-            "label": "Help text",
-            "valueType": "string"
-          },
-          {
-            "component": "richtext",
-            "name": "tooltip",
-            "label": "Short description",
-            "valueType": "string"
-          }
-        ]
-      },
-      {
-        "component": "container",
-        "name": "validation",
-        "label": "Validation",
-        "collapsible": true,
-        "fields": [
-          {
-            "component": "boolean",
-            "name": "required",
-            "label": "Required",
-            "valueType": "boolean"
-          },
-          {
-            "component": "text",
-            "name": "mandatoryMessage",
-            "label": "Error message",
-            "valueType": "string",
-            "description": "Error message shown when required field is left empty."
-          },
-          {
-            "component": "text",
-            "name": "validateExpMessage",
-            "label": "Script validation message",
-            "valueType": "string",
-            "description": "Displayed when validation script fails."
           }
         ]
       }
@@ -4880,11 +4429,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -5096,11 +4646,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -5313,11 +4864,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -5521,11 +5073,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
@@ -5667,11 +5220,12 @@
         ]
       },
       {
-        "component": "container",
-        "name": "help",
-        "label": "Help Content",
-        "collapsible": true,
         "fields": [
+          {
+            "component": "tab",
+            "label": "Help Content",
+            "name": "help"
+          },
           {
             "component": "richtext",
             "name": "description",
